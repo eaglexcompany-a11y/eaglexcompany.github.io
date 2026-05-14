@@ -25,7 +25,6 @@
             overflow-x: hidden;
         }
 
-        /* Animated Glowing Header */
         header {
             width: 100%;
             padding: 60px 0;
@@ -58,7 +57,6 @@
             font-weight: 300;
         }
 
-        /* Main Grid Layout */
         .container {
             max-width: 1100px;
             width: 90%;
@@ -71,7 +69,6 @@
             gap: 25px;
         }
 
-        /* Glowing Cards */
         .card {
             background: var(--card-bg);
             border: 1px solid #222;
@@ -88,18 +85,9 @@
             box-shadow: 0 0 30px rgba(0, 255, 136, 0.15);
         }
 
-        .card h2 {
-            margin-top: 0;
-            font-size: 1.6rem;
-            letter-spacing: 1px;
-        }
+        .card h2 { margin-top: 0; font-size: 1.6rem; letter-spacing: 1px; }
+        .card p { color: #aaa; line-height: 1.6; }
 
-        .card p {
-            color: #aaa;
-            line-height: 1.6;
-        }
-
-        /* Status Indicator */
         .status-bar {
             display: inline-flex;
             align-items: center;
@@ -119,7 +107,6 @@
             box-shadow: 0 0 8px var(--primary-glow);
         }
 
-        /* Buttons with Glowing Hover */
         .btn {
             display: inline-block;
             margin-top: 25px;
@@ -151,7 +138,6 @@
             box-shadow: 0 0 20px var(--warning-glow);
         }
 
-        /* Footer */
         footer {
             padding: 60px 0;
             text-align: center;
@@ -161,9 +147,7 @@
             text-transform: uppercase;
         }
 
-        .highlight {
-            color: var(--primary-glow);
-        }
+        .highlight { color: var(--primary-glow); }
     </style>
 </head>
 <body>
@@ -178,26 +162,26 @@
             
             <!-- App Release Section -->
             <div class="card">
-                <div class="status-bar"><span class="dot"></span> Amazon: Live</div>
+                <div class="status-bar"><span class="dot"></span> Amazon Status: Preparing</div>
                 <h2>Realistic Battle Royale</h2>
-                <p>High-end graphics modules, realistic physics, and total offline capability. Version 2.0 released.</p>
+                <p>High-fidelity combat modules. Designed for offline mastery. Norman's Signature Edition.</p>
                 <a href="#" class="btn">Download APK</a>
             </div>
 
-            <!-- Admin Submission Section (Replacing Blogger features) -->
+            <!-- Admin Submission Section -->
             <div class="card" style="border-color: var(--warning-glow);">
-                <div class="status-bar" style="color: var(--warning-glow);"><span class="dot" style="background-color: var(--warning-glow); box-shadow: 0 0 8px var(--warning-glow);"></span> Admin Only</div>
-                <h2>Project Submission</h2>
-                <p>Push new metadata, app bundles, or news updates directly to the Eagle-Engine sheet.</p>
-                <!-- Replace # with your Google Form/Sheet link -->
-                <a href="#" class="btn btn-warning">Open Global Sheet</a>
+                <div class="status-bar" style="color: var(--warning-glow);"><span class="dot" style="background-color: var(--warning-glow); box-shadow: 0 0 8px var(--warning-glow);"></span> Admin Database</div>
+                <h2>Global Project Sheet</h2>
+                <p>Live CSV feed for app metadata and automation triggers. Restricted to EagleX Engine.</p>
+                <!-- Your actual Sheet link integrated below -->
+                <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr6D-YdCmOR4XKbhy_ZywwQDod_loGrAONc3WXxXV0bkshnSRkrgek5MOHS7serUcvG8KSOcK7XyLi/pub?gid=1960453656&single=true&output=csv" class="btn btn-warning">View Sheet Data</a>
             </div>
 
-            <!-- News / Archive Section -->
+            <!-- Legacy Support -->
             <div class="card">
                 <div class="status-bar" style="color: var(--secondary-glow);"><span class="dot" style="background-color: var(--secondary-glow); box-shadow: 0 0 8px var(--secondary-glow);"></span> Legacy Updates</div>
                 <h2>Forest of Echoes</h2>
-                <p>The archive of our automated blog history and intelligence logs. Currently migrating to sovereign host.</p>
+                <p>Archive of previous automated logs. Undergoing migration to private server.</p>
                 <a href="https://appsupdatess.blogspot.com" class="btn" style="border-color: var(--secondary-glow); color: var(--secondary-glow);">Access Blog</a>
             </div>
 
@@ -205,7 +189,7 @@
     </div>
 
     <footer>
-        &copy; 2026 <span class="highlight">Norman</span> | Admin of the EagleX Nation | Built to Last
+        &copy; 2026 <span class="highlight">Norman</span> | Admin of the EagleX Nation | Unlimited Power
     </footer>
 
 </body>
