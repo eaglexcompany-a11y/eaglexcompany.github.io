@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EagleX Company | Sovereign Empire</title>
+    <style>
+        :root {
+            --primary-glow: #00ff88;
+            --secondary-glow: #00d4ff;
+            --danger-glow: #ff0055;
+            --bg-dark: #050505;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Glowing Header */
+        header {
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            background: linear-gradient(180deg, #111 0%, var(--bg-dark) 100%);
+            border-bottom: 1px solid #333;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            color: var(--primary-glow);
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            text-shadow: 0 0 10px var(--primary-glow), 0 0 20px var(--primary-glow);
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { text-shadow: 0 0 10px var(--primary-glow), 0 0 20px var(--primary-glow); }
+            to { text-shadow: 0 0 20px var(--primary-glow), 0 0 40px var(--primary-glow); }
+        }
+
+        .subtitle {
+            color: var(--secondary-glow);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 5px var(--secondary-glow);
+            margin-top: 10px;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            width: 90%;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .card:hover {
+            border-color: var(--primary-glow);
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #fff;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #bbb;
+        }
+
+        /* Glowing Buttons */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: transparent;
+            color: var(--primary-glow);
+            border: 2px solid var(--primary-glow);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+        }
+
+        .btn:hover {
+            background: var(--primary-glow);
+            color: #000;
+            box-shadow: 0 0 25px var(--primary-glow);
+        }
+
+        .btn-alt {
+            color: var(--secondary-glow);
+            border-color: var(--secondary-glow);
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-alt:hover {
+            background: var(--secondary-glow);
+            box-shadow: 0 0 25px var(--secondary-glow);
+        }
+
+        footer {
+            margin: 50px 0;
+            color: #555;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>EAGLEX</h1>
+        <div class="subtitle">Sovereign App Nation</div>
+    </header>
+
+    <div class="container">
+        <!-- App Release Section -->
+        <div class="card">
+            <h2>Realistic Offline Battle Royale</h2>
+            <p>High-fidelity combat. Zero internet required. Designed for ultimate performance and total freedom.</p>
+            <a href="#" class="btn">Download APK</a>
+        </div>
+
+        <!-- News/Blogger Section -->
+        <div class="card">
+            <h2>Forest of Echoes Hub</h2>
+            <p>The core of our tech intelligence. Monitoring systems, automated scripts, and security updates.</p>
+            <a href="https://appsupdatess.blogspot.com" class="btn btn-alt">Access Archive</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 EAGLEX COMPANY | No Restrictions | Admin Control
+    </footer>
+
+</body>
+</html>
