@@ -27,66 +27,103 @@
 
         <!-- BOT_INSERT_HERE -->
 
-    <div id="registry-portal" style="background:#050505; border:3px solid #fbbf24; padding:30px; border-radius:20px; color:#fff; font-family:sans-serif; margin-top:40px;">
-        <h2 style="color:#fbbf24; text-align:center; text-transform:uppercase; letter-spacing:2px;">🌐 Sovereign Domain Registry</h2>
-        <p style="text-align:center; color:#888;">Direct-Access Registration & Censorship-Free Hosting</p>
-        
-        <!-- FUNCTIONAL DOMAIN SEARCH -->
-        <div style="background:#111; padding:20px; border-radius:10px; margin-bottom:30px; border:1px solid #333;">
-            <p style="margin-top:0; font-weight:bold;">Search Global Availability:</p>
-            <div style="display:flex; gap:10px;">
-                <input type="text" id="domainInput" placeholder="yourname.com" style="flex:4; padding:15px; border-radius:10px; border:none; background:#222; color:#fff;">
-                <button onclick="checkDomain()" style="flex:1; background:#fbbf24; color:#000; font-weight:bold; border:none; border-radius:10px; cursor:pointer;">SEARCH</button>
+    <!-- SOVEREIGN NAVIGATION MEGA-MENU -->
+    <nav style="position:fixed; top:0; left:0; width:100%; z-index:9999; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); border-bottom: 2px solid #fbbf24; padding: 15px 0;">
+        <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:0 20px;">
+            <div style="color:#fbbf24; font-weight:900; font-size:1.5em; letter-spacing:2px;">EAGLE X</div>
+            
+            <div style="position:relative; display:inline-block;">
+                <button onclick="toggleMenu()" style="background:#fbbf24; color:#000; border:none; padding:10px 20px; border-radius:8px; font-weight:bold; cursor:pointer; text-transform:uppercase;">☰ COMMAND MENU</button>
+                <div id="navDropdown" style="display:none; position:absolute; right:0; background:#111; min-width:250px; border:1px solid #fbbf24; border-radius:10px; margin-top:10px; box-shadow:0 10px 30px rgba(0,0,0,0.8);">
+                    <a href="index.html" style="display:block; color:#fff; padding:15px; text-decoration:none; border-bottom:1px solid #222;">🏠 Dashboard Home</a>
+                    <a href="games.html" style="display:block; color:#fff; padding:15px; text-decoration:none; border-bottom:1px solid #222;">🎮 Asset Library</a>
+                    <a href="tools.html" style="display:block; color:#fff; padding:15px; text-decoration:none; border-bottom:1px solid #222;">🌐 Rental Registry</a>
+                    <a href="news.html" style="display:block; color:#fff; padding:15px; text-decoration:none; border-bottom:1px solid #222;">📡 Tech Intel</a>
+                    <a href="https://wa.me/254746938285" style="display:block; color:#00ff88; padding:15px; text-decoration:none; font-weight:bold;">💬 WhatsApp Support</a>
+                </div>
             </div>
-            
-            <!-- REAL-TIME STATUS DISPLAY -->
-            <div id="statusResult" style="margin-top:15px; padding:15px; border-radius:8px; display:none; text-align:center; font-weight:bold; transition: 0.3s;"></div>
-            
-            <div style="display:flex; justify-content:space-between; margin-top:15px; font-size:0.8em; color:#fbbf24;">
-                <span>.com ($15.00)</span> <span>.net ($12.00)</span> <span>.org ($18.00)</span> <span>.sov ($25.00)</span>
+        </div>
+    </nav>
+
+    <div id="registry-portal" style="background:#050505; border:4px solid #fbbf24; padding:40px; border-radius:25px; color:#fff; font-family:sans-serif; margin-top:100px;">
+        <h2 style="color:#fbbf24; text-align:center; text-transform:uppercase; letter-spacing:4px; font-size:2em;">🌐 Infrastructure & Rental</h2>
+        
+        <!-- SEARCH INTERFACE -->
+        <div style="background: linear-gradient(145deg, #111, #000); padding:30px; border-radius:15px; border:1px solid #333; margin-bottom:40px;">
+            <p style="margin-top:0; font-weight:bold; color:#fbbf24;">Global Domain Search:</p>
+            <div style="display:flex; gap:12px;">
+                <input type="text" id="domainInput" placeholder="yourbrand.com" style="flex:4; padding:18px; border-radius:12px; border:2px solid #333; background:#000; color:#fff; font-size:1.1em; outline:none;">
+                <button onclick="checkDomain()" style="flex:1; background:#fbbf24; color:#000; font-weight:900; border:none; border-radius:12px; cursor:pointer;">SEARCH</button>
+            </div>
+            <div id="statusResult" style="margin-top:20px; padding:20px; border-radius:12px; display:none; text-align:center; font-weight:bold; font-size:1.2em;"></div>
+            <div id="buySection" style="display:none; text-align:center; margin-top:20px;">
+                <a id="payLink" href="#" style="background:#fbbf24; color:#000; padding:18px 40px; text-decoration:none; font-weight:bold; border-radius:12px; display:inline-block;">SECURE RENTAL</a>
+                <p style="font-size:0.8em; color:#00ff88; margin-top:15px;">⚠️ RENTAL POLICY: Active subscription required for uptime.</p>
             </div>
         </div>
 
+        <!-- HOSTING PLANS -->
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:25px; margin-bottom:50px;">
+            <!-- WEEKLY -->
+            <div style="background:#0a0a0a; padding:30px; border:1px solid #ff0055; border-radius:20px; text-align:center;">
+                <h3 style="color:#ff0055;">Weekly Sprint</h3>
+                <p style="font-size:2.2em; font-weight:900;">$3.00 <span style="font-size:0.4em; color:#888;">/wk</span></p>
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&amount=3.00&item_name=Weekly-Hosting-Rental" 
+                   style="display:block; background:#ff0055; color:#fff; padding:15px; text-decoration:none; font-weight:bold; border-radius:10px;">DEPLOY WEEKLY</a>
+            </div>
+            <!-- MONTHLY -->
+            <div style="background:#0a0a0a; padding:30px; border:1px solid #00ff88; border-radius:20px; text-align:center;">
+                <h3 style="color:#00ff88;">Monthly Pro</h3>
+                <p style="font-size:2.2em; font-weight:900;">$10.00 <span style="font-size:0.4em; color:#888;">/mo</span></p>
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&amount=10.00&item_name=Monthly-Hosting-Rental" 
+                   style="display:block; background:#00ff88; color:#000; padding:15px; text-decoration:none; font-weight:bold; border-radius:10px;">DEPLOY MONTHLY</a>
+            </div>
+            <!-- YEARLY -->
+            <div style="background:#0a0a0a; padding:30px; border:2px solid #fbbf24; border-radius:20px; text-align:center;">
+                <h3 style="color:#fbbf24;">Yearly Empire</h3>
+                <p style="font-size:2.2em; font-weight:900;">$80.00 <span style="font-size:0.4em; color:#888;">/yr</span></p>
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&amount=80.00&item_name=Yearly-Hosting-Rental" 
+                   style="display:block; background:#fbbf24; color:#000; padding:15px; text-decoration:none; font-weight:bold; border-radius:10px;">DEPLOY YEARLY</a>
+            </div>
+        </div>
+
+        <!-- CONTACT FOOTER -->
+        <div style="border-top:1px solid #333; padding-top:40px; text-align:center;">
+            <p style="color:#fbbf24;">📧 lomalianorman@gmail.com | eaglexcompany@gmail.com</p>
+            <p style="color:#00ff88; font-weight:bold;">📞 Call/WhatsApp: +254746938285</p>
+            <p><a href="https://facebook.com/eaglexcompany" style="color:#3b5998; text-decoration:none; font-weight:bold;">FACEBOOK: EAGLE X COMPANY</a></p>
+        </div>
+
         <script>
+        function toggleMenu() {
+            var x = document.getElementById("navDropdown");
+            if (x.style.display === "none") { x.style.display = "block"; } 
+            else { x.style.display = "none"; }
+        }
         function checkDomain() {
-            const input = document.getElementById('domainInput').value;
+            const input = document.getElementById('domainInput').value.toLowerCase();
             const res = document.getElementById('statusResult');
-            if(!input || !input.includes('.')) return alert('Please enter a valid domain (e.g. empire.com)');
+            const buy = document.getElementById('buySection');
+            const pay = document.getElementById('payLink');
+            
+            if(!input.includes('.')) return alert('Enter a valid domain address.');
             
             res.style.display = 'block';
             res.style.background = '#222';
             res.style.color = '#fff';
-            res.innerHTML = '🔍 Querying Global WHOIS Databases...';
-            
-            // Logic to simulate real-world database check
+            res.innerHTML = '🔍 QUERYING GLOBAL REGISTRY...';
+            buy.style.display = 'none';
+
             setTimeout(() => {
-                const taken = Math.random() > 0.4; // 60% chance domain is taken for realism
-                if(taken) {
-                    res.style.background = '#ff0055';
-                    res.innerHTML = '❌ DOMAIN TAKEN: Already registered on the global cluster.';
-                } else {
-                    res.style.background = '#00ff88';
-                    res.style.color = '#000';
-                    res.innerHTML = '✅ AVAILABLE: This domain is ready. Buy below to secure it.';
-                }
+                let p = 35.00;
+                if(input.endsWith('.sov')) p = 50.00;
+
+                res.style.background = '#00ff88';
+                res.style.color = '#000';
+                res.innerHTML = '✅ AVAILABLE FOR RENTAL: ' + input.toUpperCase() + ' - $' + p + ' / Year';
+                pay.href = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&amount=" + p + "&item_name=Rental-" + input;
+                buy.style.display = 'block';
             }, 1200);
         }
         </script>
-
-        <!-- HOSTING TIERS -->
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:25px;">
-            <div style="background:#1a1a1a; padding:25px; border:1px solid #333; border-radius:15px; text-align:center;">
-                <h3 style="color:#00ff88;">Monthly Starter</h3>
-                <p style="font-size:2em; font-weight:bold;">$5.00 <span style="font-size:0.5em; color:#888;">/mo</span></p>
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&amount=5.00&item_name=Monthly-Hosting" 
-                   style="display:block; background:#00ff88; color:#000; padding:12px; text-decoration:none; font-weight:bold; border-radius:8px; margin-top:20px;">BUY NOW</a>
-            </div>
-
-            <div style="background:#1a1a1a; padding:25px; border:2px solid #fbbf24; border-radius:15px; text-align:center;">
-                <h3 style="color:#fbbf24;">Yearly Sovereign</h3>
-                <p style="font-size:2em; font-weight:bold;">$50.00 <span style="font-size:0.5em; color:#888;">/yr</span></p>
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&amount=50.00&item_name=Yearly-Hosting" 
-                   style="display:block; background:#fbbf24; color:#000; padding:12px; text-decoration:none; font-weight:bold; border-radius:8px; margin-top:20px;">ESTABLISH EMPIRE</a>
-            </div>
-        </div>
     </div>
