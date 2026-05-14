@@ -1,129 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sovereign Registry | Infrastructure & Domains</title>
-    <style>
-        body { background: #050505; color: #e0e0e0; font-family: 'Inter', sans-serif; margin: 0; padding: 20px; }
-        .container { max-width: 1000px; margin: auto; }
-        header { text-align: center; padding: 50px 0; border-bottom: 3px solid #fbbf24; margin-bottom: 50px; }
-        h1 { color: #fbbf24; font-size: 2.8em; text-transform: uppercase; letter-spacing: 2px; }
-        .hero-box { background: linear-gradient(145deg, #111, #000); border: 1px solid #333; padding: 30px; border-radius: 20px; text-align: center; margin-bottom: 50px; }
-        .gold { color: #fbbf24; font-weight: bold; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Sovereign Registry</h1>
-            <p>The Landlord of the Liberated Internet.</p>
-        </header>
 
-        <div class="hero-box">
-            <h2>Establish Your Presence. <span class="gold">Own the Domain.</span></h2>
-            <p>We provide the most secure, uncensored hosting and domain registration in the world. Real servers. Real files.</p>
-        </div>
-
-        <!-- BOT_INSERT_HERE -->
-
-    <!-- SOVEREIGN NAVIGATION MEGA-MENU -->
-    <nav style="position:fixed; top:0; left:0; width:100%; z-index:9999; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); border-bottom: 2px solid #fbbf24; padding: 15px 0;">
-        <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:0 20px;">
-            <div style="color:#fbbf24; font-weight:900; font-size:1.5em; letter-spacing:2px;">EAGLE X</div>
-            
-            <div style="position:relative; display:inline-block;">
-                <button onclick="toggleMenu()" style="background:#fbbf24; color:#000; border:none; padding:10px 20px; border-radius:8px; font-weight:bold; cursor:pointer; text-transform:uppercase;">☰ COMMAND MENU</button>
-                <div id="navDropdown" style="display:none; position:absolute; right:0; background:#111; min-width:250px; border:1px solid #fbbf24; border-radius:10px; margin-top:10px; box-shadow:0 10px 30px rgba(0,0,0,0.8);">
-                    <a href="index.html" style="display:block; color:#fff; padding:15px; text-decoration:none; border-bottom:1px solid #222;">🏠 Dashboard Home</a>
-                    <a href="games.html" style="display:block; color:#fff; padding:15px; text-decoration:none; border-bottom:1px solid #222;">🎮 Asset Library</a>
-                    <a href="tools.html" style="display:block; color:#fff; padding:15px; text-decoration:none; border-bottom:1px solid #222;">🌐 Rental Registry</a>
-                    <a href="news.html" style="display:block; color:#fff; padding:15px; text-decoration:none; border-bottom:1px solid #222;">📡 Tech Intel</a>
-                    <a href="https://wa.me/254746938285" style="display:block; color:#00ff88; padding:15px; text-decoration:none; font-weight:bold;">💬 WhatsApp Support</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div id="registry-portal" style="background:#050505; border:4px solid #fbbf24; padding:40px; border-radius:25px; color:#fff; font-family:sans-serif; margin-top:100px;">
-        <h2 style="color:#fbbf24; text-align:center; text-transform:uppercase; letter-spacing:4px; font-size:2em;">🌐 Infrastructure & Rental</h2>
+    <!-- 1. GLOBAL VPN NODE MANAGER -->
+    <section id="vpn-servers" style="padding:20px; background:#050505; border:2px solid #fbbf24; border-radius:20px; margin-bottom:30px;">
+        <h2 style="color:#fbbf24; text-align:center;">🌐 GLOBAL VPN INFRASTRUCTURE</h2>
+        <p style="text-align:center; color:#888;">High-speed encrypted tunnels from every continent.</p>
         
-        <!-- SEARCH INTERFACE -->
-        <div style="background: linear-gradient(145deg, #111, #000); padding:30px; border-radius:15px; border:1px solid #333; margin-bottom:40px;">
-            <p style="margin-top:0; font-weight:bold; color:#fbbf24;">Global Domain Search:</p>
-            <div style="display:flex; gap:12px;">
-                <input type="text" id="domainInput" placeholder="yourbrand.com" style="flex:4; padding:18px; border-radius:12px; border:2px solid #333; background:#000; color:#fff; font-size:1.1em; outline:none;">
-                <button onclick="checkDomain()" style="flex:1; background:#fbbf24; color:#000; font-weight:900; border:none; border-radius:12px; cursor:pointer;">SEARCH</button>
-            </div>
-            <div id="statusResult" style="margin-top:20px; padding:20px; border-radius:12px; display:none; text-align:center; font-weight:bold; font-size:1.2em;"></div>
-            <div id="buySection" style="display:none; text-align:center; margin-top:20px;">
-                <a id="payLink" href="#" style="background:#fbbf24; color:#000; padding:18px 40px; text-decoration:none; font-weight:bold; border-radius:12px; display:inline-block;">SECURE RENTAL</a>
-                <p style="font-size:0.8em; color:#00ff88; margin-top:15px;">⚠️ RENTAL POLICY: Active subscription required for uptime.</p>
-            </div>
+        <div id="trial-timer" style="background:#222; padding:15px; border-radius:10px; text-align:center; margin-bottom:20px; border:1px dashed #00ff88;">
+            <span style="color:#00ff88; font-weight:bold;">FREE TRIAL STATUS:</span> 
+            <span id="timer-clock">30:00</span> Remaining
         </div>
 
-        <!-- HOSTING PLANS -->
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:25px; margin-bottom:50px;">
-            <!-- WEEKLY -->
-            <div style="background:#0a0a0a; padding:30px; border:1px solid #ff0055; border-radius:20px; text-align:center;">
-                <h3 style="color:#ff0055;">Weekly Sprint</h3>
-                <p style="font-size:2.2em; font-weight:900;">$3.00 <span style="font-size:0.4em; color:#888;">/wk</span></p>
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&amount=3.00&item_name=Weekly-Hosting-Rental" 
-                   style="display:block; background:#ff0055; color:#fff; padding:15px; text-decoration:none; font-weight:bold; border-radius:10px;">DEPLOY WEEKLY</a>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:15px;">
+            <div class="vpn-card">
+                <h4>🇺🇸 USA (New York)</h4>
+                <button onclick="connectVPN('USA')" id="btn-USA" class="vpn-btn">ACTIVATE TRIAL</button>
             </div>
-            <!-- MONTHLY -->
-            <div style="background:#0a0a0a; padding:30px; border:1px solid #00ff88; border-radius:20px; text-align:center;">
-                <h3 style="color:#00ff88;">Monthly Pro</h3>
-                <p style="font-size:2.2em; font-weight:900;">$10.00 <span style="font-size:0.4em; color:#888;">/mo</span></p>
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&amount=10.00&item_name=Monthly-Hosting-Rental" 
-                   style="display:block; background:#00ff88; color:#000; padding:15px; text-decoration:none; font-weight:bold; border-radius:10px;">DEPLOY MONTHLY</a>
+            <div class="vpn-card">
+                <h4>🇬🇧 UK (London)</h4>
+                <button onclick="connectVPN('UK')" id="btn-UK" class="vpn-btn">ACTIVATE TRIAL</button>
             </div>
-            <!-- YEARLY -->
-            <div style="background:#0a0a0a; padding:30px; border:2px solid #fbbf24; border-radius:20px; text-align:center;">
-                <h3 style="color:#fbbf24;">Yearly Empire</h3>
-                <p style="font-size:2.2em; font-weight:900;">$80.00 <span style="font-size:0.4em; color:#888;">/yr</span></p>
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&amount=80.00&item_name=Yearly-Hosting-Rental" 
-                   style="display:block; background:#fbbf24; color:#000; padding:15px; text-decoration:none; font-weight:bold; border-radius:10px;">DEPLOY YEARLY</a>
+            <div class="vpn-card">
+                <h4>🇩🇪 Germany (Frankfurt)</h4>
+                <button onclick="connectVPN('GER')" id="btn-GER" class="vpn-btn">ACTIVATE TRIAL</button>
+            </div>
+            <div class="vpn-card">
+                <h4>🇿🇦 South Africa</h4>
+                <button onclick="connectVPN('RSA')" id="btn-RSA" class="vpn-btn">ACTIVATE TRIAL</button>
             </div>
         </div>
+    </section>
 
-        <!-- CONTACT FOOTER -->
-        <div style="border-top:1px solid #333; padding-top:40px; text-align:center;">
-            <p style="color:#fbbf24;">📧 lomalianorman@gmail.com | eaglexcompany@gmail.com</p>
-            <p style="color:#00ff88; font-weight:bold;">📞 Call/WhatsApp: +254746938285</p>
-            <p><a href="https://facebook.com/eaglexcompany" style="color:#3b5998; text-decoration:none; font-weight:bold;">FACEBOOK: EAGLE X COMPANY</a></p>
+    <!-- 2. GLOBAL PHONE NUMBER STORE -->
+    <section id="phone-store" style="padding:20px; background:#111; border-radius:20px; border:2px solid #00ff88;">
+        <h2 style="color:#00ff88; text-align:center;">📱 VIRTUAL NUMBER PROVISIONING</h2>
+        <p style="text-align:center; color:#888;">Real numbers hosted on Eagle X Servers. Receive SMS/Calls globally.</p>
+        
+        <div style="margin-bottom:20px; display:flex; gap:10px;">
+            <select id="country-select" style="flex:2; padding:15px; background:#000; color:#fff; border:1px solid #00ff88; border-radius:10px;">
+                <option value="USA">United States (+1)</option>
+                <option value="UK">United Kingdom (+44)</option>
+                <option value="KE">Kenya (+254)</option>
+                <option value="IN">India (+91)</option>
+            </select>
+            <button onclick="purchaseNumber()" style="flex:1; background:#00ff88; color:#000; font-weight:bold; border-radius:10px; border:none; cursor:pointer;">SEARCH NUMBER</button>
         </div>
 
-        <script>
-        function toggleMenu() {
-            var x = document.getElementById("navDropdown");
-            if (x.style.display === "none") { x.style.display = "block"; } 
-            else { x.style.display = "none"; }
+        <div id="number-results" style="display:grid; grid-template-columns:1fr; gap:10px;">
+            <!-- Generated numbers will appear here -->
+        </div>
+    </section>
+
+    <style>
+        .vpn-card { background:#1a1a1a; padding:15px; border-radius:12px; text-align:center; border:1px solid #333; }
+        .vpn-btn { width:100%; padding:10px; background:#fbbf24; border:none; border-radius:8px; font-weight:bold; cursor:pointer; margin-top:10px; }
+        .num-item { background:#000; padding:15px; border:1px solid #333; border-radius:10px; display:flex; justify-content:space-between; align-items:center; }
+        .buy-btn { background:#00ff88; color:#000; padding:8px 15px; text-decoration:none; border-radius:5px; font-weight:bold; font-size:0.8em; }
+    </style>
+
+    <script>
+        // VPN TRIAL LOGIC
+        let timeLeft = 1800; // 30 minutes in seconds
+        let timerRunning = false;
+
+        function connectVPN(country) {
+            if (!timerRunning) {
+                timerRunning = true;
+                alert("VPN Tunnel Established: " + country + ". Your 30-minute free trial has started.");
+                startTimer();
+            } else if (timeLeft <= 0) {
+                alert("TRIAL EXPIRED. Please purchase a subscription for " + country + " to continue.");
+                window.location.href = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&amount=5.00&item_name=VPN-" + country;
+            } else {
+                alert("Switching tunnel to " + country + "...");
+            }
         }
-        function checkDomain() {
-            const input = document.getElementById('domainInput').value.toLowerCase();
-            const res = document.getElementById('statusResult');
-            const buy = document.getElementById('buySection');
-            const pay = document.getElementById('payLink');
-            
-            if(!input.includes('.')) return alert('Enter a valid domain address.');
-            
-            res.style.display = 'block';
-            res.style.background = '#222';
-            res.style.color = '#fff';
-            res.innerHTML = '🔍 QUERYING GLOBAL REGISTRY...';
-            buy.style.display = 'none';
 
+        function startTimer() {
+            const clock = document.getElementById('timer-clock');
+            const interval = setInterval(() => {
+                let mins = Math.floor(timeLeft / 60);
+                let secs = timeLeft % 60;
+                clock.innerText = mins + ":" + (secs < 10 ? "0" : "") + secs;
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    clock.innerText = "EXPIRED";
+                    document.querySelectorAll('.vpn-btn').forEach(b => b.innerText = "BUY ACCESS");
+                }
+                timeLeft--;
+            }, 1000);
+        }
+
+        // PHONE NUMBER LOGIC
+        function purchaseNumber() {
+            const country = document.getElementById('country-select').value;
+            const results = document.getElementById('number-results');
+            results.innerHTML = '<p style="text-align:center;">Searching Secure Vault...</p>';
+            
             setTimeout(() => {
-                let p = 35.00;
-                if(input.endsWith('.sov')) p = 50.00;
-
-                res.style.background = '#00ff88';
-                res.style.color = '#000';
-                res.innerHTML = '✅ AVAILABLE FOR RENTAL: ' + input.toUpperCase() + ' - $' + p + ' / Year';
-                pay.href = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&amount=" + p + "&item_name=Rental-" + input;
-                buy.style.display = 'block';
-            }, 1200);
+                let randomNum = Math.floor(Math.random() * 9000000) + 1000000;
+                results.innerHTML = `
+                    <div class="num-item">
+                        <span><b>${country}:</b> +${country == 'USA' ? '1' : '44'}${randomNum}</span>
+                        <div>
+                            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&amount=2.00&item_name=Phone-Weekly-${country}" class="buy-btn">$2/Wk</a>
+                            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&amount=7.00&item_name=Phone-Monthly-${country}" class="buy-btn">$7/Mo</a>
+                        </div>
+                    </div>
+                `;
+            }, 1500);
         }
-        </script>
-    </div>
+    </script>
+    
