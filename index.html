@@ -3,194 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EagleX Company | Sovereign Empire</title>
+    <title>EagleX | Sovereign Command</title>
     <style>
-        :root {
-            --primary-glow: #00ff88;
-            --secondary-glow: #00d4ff;
-            --warning-glow: #ffcc00;
-            --danger-glow: #ff0055;
-            --bg-dark: #050505;
-            --card-bg: #111111;
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-dark);
-            color: #ffffff;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden;
-        }
-
-        header {
-            width: 100%;
-            padding: 60px 0;
-            text-align: center;
-            background: linear-gradient(180deg, #151515 0%, var(--bg-dark) 100%);
-            border-bottom: 1px solid #222;
-        }
-
-        h1 {
-            font-size: 4rem;
-            margin: 0;
-            color: var(--primary-glow);
-            text-transform: uppercase;
-            letter-spacing: 12px;
-            text-shadow: 0 0 15px var(--primary-glow);
-            animation: breathe 3s infinite alternate;
-        }
-
-        @keyframes breathe {
-            from { text-shadow: 0 0 10px var(--primary-glow), 0 0 20px var(--primary-glow); opacity: 0.9; }
-            to { text-shadow: 0 0 25px var(--primary-glow), 0 0 50px var(--primary-glow); opacity: 1; }
-        }
-
-        .subtitle {
-            color: var(--secondary-glow);
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-top: 15px;
-            font-weight: 300;
-        }
-
-        .container {
-            max-width: 1100px;
-            width: 90%;
-            margin: 50px 0;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid #222;
-            border-radius: 12px;
-            padding: 30px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-glow);
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.15);
-        }
-
-        .card h2 { margin-top: 0; font-size: 1.6rem; letter-spacing: 1px; }
-        .card p { color: #aaa; line-height: 1.6; }
-
-        .status-bar {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            color: var(--primary-glow);
-        }
-
-        .dot {
-            height: 8px;
-            width: 8px;
-            background-color: var(--primary-glow);
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 8px var(--primary-glow);
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 14px 35px;
-            background: transparent;
-            color: var(--primary-glow);
-            border: 2px solid var(--primary-glow);
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: var(--primary-glow);
-            color: #000;
-            box-shadow: 0 0 20px var(--primary-glow);
-        }
-
-        .btn-warning {
-            color: var(--warning-glow);
-            border-color: var(--warning-glow);
-        }
-
-        .btn-warning:hover {
-            background: var(--warning-glow);
-            box-shadow: 0 0 20px var(--warning-glow);
-        }
-
-        footer {
-            padding: 60px 0;
-            text-align: center;
-            color: #444;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .highlight { color: var(--primary-glow); }
+        :root { --p-glow: #00ff88; --s-glow: #00d4ff; --t-glow: #ff0055; --bg: #050505; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: #fff; margin: 0; display: flex; flex-direction: column; align-items: center; }
+        header { padding: 50px 0; text-align: center; width: 100%; border-bottom: 1px solid #222; }
+        h1 { font-size: 3rem; color: var(--p-glow); text-shadow: 0 0 15px var(--p-glow); letter-spacing: 10px; }
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 90%; max-width: 1100px; margin-top: 40px; }
+        .sector-card { background: #111; border: 1px solid #222; padding: 25px; border-radius: 12px; transition: 0.3s; text-align: center; }
+        .sector-card:hover { border-color: var(--s-glow); transform: scale(1.05); }
+        .btn { display: block; margin-top: 15px; padding: 10px; border: 1px solid var(--s-glow); color: var(--s-glow); text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 5px; }
+        .btn:hover { background: var(--s-glow); color: #000; box-shadow: 0 0 15px var(--s-glow); }
+        .donate-btn { border-color: #ffcc00; color: #ffcc00; margin-top: 30px; }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>EAGLEX</h1>
-        <div class="subtitle">Sovereign App Nation & Intelligence</div>
+        <h1>EAGLEX NATION</h1>
+        <p style="letter-spacing: 3px; color: #888;">ADMIN: NORMAN</p>
     </header>
 
-    <div class="container">
-        <div class="grid">
-            
-            <!-- App Release Section -->
-            <div class="card">
-                <div class="status-bar"><span class="dot"></span> Amazon Status: Preparing</div>
-                <h2>Realistic Battle Royale</h2>
-                <p>High-fidelity combat modules. Designed for offline mastery. Norman's Signature Edition.</p>
-                <a href="#" class="btn">Download APK</a>
-            </div>
+    <div class="nav-grid">
+        <!-- News Sector -->
+        <div class="sector-card">
+            <h2 style="color: var(--s-glow);">INTEL / NEWS</h2>
+            <p>Trending tech & gaming reports generated by Forest of Echoes.</p>
+            <a href="news.html" class="btn">Enter Intel</a>
+        </div>
 
-            <!-- Admin Submission Section -->
-            <div class="card" style="border-color: var(--warning-glow);">
-                <div class="status-bar" style="color: var(--warning-glow);"><span class="dot" style="background-color: var(--warning-glow); box-shadow: 0 0 8px var(--warning-glow);"></span> Admin Database</div>
-                <h2>Global Project Sheet</h2>
-                <p>Live CSV feed for app metadata and automation triggers. Restricted to EagleX Engine.</p>
-                <!-- Your actual Sheet link integrated below -->
-                <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr6D-YdCmOR4XKbhy_ZywwQDod_loGrAONc3WXxXV0bkshnSRkrgek5MOHS7serUcvG8KSOcK7XyLi/pub?gid=1960453656&single=true&output=csv" class="btn btn-warning">View Sheet Data</a>
-            </div>
+        <!-- Games Sector -->
+        <div class="sector-card">
+            <h2 style="color: var(--p-glow);">WAR ROOM (GAMES)</h2>
+            <p>Realistic offline modules. Direct APK downloads.</p>
+            <a href="games.html" class="btn" style="border-color: var(--p-glow); color: var(--p-glow);">Play Now</a>
+        </div>
 
-            <!-- Legacy Support -->
-            <div class="card">
-                <div class="status-bar" style="color: var(--secondary-glow);"><span class="dot" style="background-color: var(--secondary-glow); box-shadow: 0 0 8px var(--secondary-glow);"></span> Legacy Updates</div>
-                <h2>Forest of Echoes</h2>
-                <p>Archive of previous automated logs. Undergoing migration to private server.</p>
-                <a href="https://appsupdatess.blogspot.com" class="btn" style="border-color: var(--secondary-glow); color: var(--secondary-glow);">Access Blog</a>
-            </div>
-
+        <!-- Tools Sector -->
+        <div class="sector-card">
+            <h2 style="color: var(--t-glow);">FORGE (TOOLS)</h2>
+            <p>Powerful automation bots and development scripts.</p>
+            <a href="tools.html" class="btn" style="border-color: var(--t-glow); color: var(--t-glow);">Access Tools</a>
         </div>
     </div>
 
-    <footer>
-        &copy; 2026 <span class="highlight">Norman</span> | Admin of the EagleX Nation | Unlimited Power
-    </footer>
+    <!-- Donation/Support -->
+    <a href="DONATION_LINK" class="btn donate-btn">Support the Empire (Donation)</a>
 
+    <footer style="margin: 50px; color: #444;">© 2026 SOVEREIGN ENGINE | NO LIMITS</footer>
 </body>
 </html>
