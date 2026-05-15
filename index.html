@@ -6,98 +6,91 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>EAGLE X COMMAND</title>
         <style>
-            :root { --gold: #fbbf24; --green: #00ff88; --dark: #000; --panel: #0a0a0a; }
-            body, html { margin: 0; padding: 0; height: 100%; background: var(--dark); color: #fff; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
+            :root { --gold: #fbbf24; --green: #00ff88; --dark: #000; }
+            body, html { margin: 0; padding: 0; height: 100%; background: var(--dark); color: #fff; font-family: 'Inter', sans-serif; overflow: hidden; }
             
-            /* TOP COMMAND HEADER */
+            /* MASTER EAGLE X HEADER */
             header { 
-                height: 60px; background: #000; border-bottom: 2px solid var(--gold); 
-                display: flex; align-items: center; justify-content: center; z-index: 1000; position: relative; 
+                height: 70px; background: #000; border-bottom: 2px solid var(--gold); 
+                display: flex; align-items: center; justify-content: center; z-index: 9999; position: relative;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.8);
             }
-            header h1 { letter-spacing: 10px; color: var(--gold); margin: 0; font-size: 1.5em; }
+            header h1 { letter-spacing: 12px; color: var(--gold); margin: 0; font-size: 1.8em; text-shadow: 0 0 10px rgba(251,191,36,0.5); }
 
-            /* ENGINE NAVIGATION */
+            /* COMMAND NAVIGATION */
             .nav-bar { 
-                display: flex; background: #111; height: 50px; align-items: center; 
-                justify-content: center; gap: 20px; border-bottom: 1px solid #333;
+                display: flex; background: #050505; height: 50px; align-items: center; 
+                justify-content: center; gap: 15px; border-bottom: 1px solid #222;
             }
             .nav-item { 
-                background: none; border: 1px solid #444; color: #888; padding: 5px 15px; 
-                border-radius: 20px; cursor: pointer; transition: 0.3s; font-weight: bold; 
+                background: none; border: 1px solid #333; color: #666; padding: 6px 18px; 
+                border-radius: 4px; cursor: pointer; transition: 0.2s; font-weight: 600; text-transform: uppercase; font-size: 0.75em;
             }
-            .nav-item.active { color: var(--gold); border-color: var(--gold); background: rgba(251,191,36,0.1); }
+            .nav-item.active { color: var(--gold); border-color: var(--gold); background: rgba(251,191,36,0.05); }
 
-            /* THE MASKING ZONE (THE SUIT) */
-            .main-view { width: 100%; height: calc(100vh - 110px); position: relative; background: #000; }
+            /* THE MASKING ENGINE (KIDNAPPING THE AI) */
+            .viewport { width: 100%; height: calc(100vh - 120px); position: relative; overflow: hidden; }
             
-            /* Hidden iframe container to 'Kidnap' Nano Banana and AI */
-            .engine-frame { 
-                width: 100%; height: calc(100% + 70px); border: none; 
-                position: absolute; top: -70px; /* This cuts off their logo/header */
+            /* The 'Mask' cuts off the top 80 pixels where their logos/logins live */
+            .slave-frame { 
+                width: 100%; height: calc(100% + 80px); border: none; 
+                position: absolute; top: -80px; left: 0;
                 display: none; 
             }
-            .engine-frame.active { display: block; }
+            .slave-frame.active { display: block; }
 
-            /* INTERNAL DASHBOARD STYLES */
-            .internal-ui { padding: 20px; display: none; overflow-y: auto; height: 100%; }
-            .internal-ui.active { display: block; }
-            .card { background: var(--panel); border: 1px solid #222; padding: 20px; border-radius: 15px; margin-bottom: 20px; }
-            .btn { background: var(--green); color: #000; padding: 12px; border: none; border-radius: 8px; width: 100%; font-weight: bold; cursor: pointer; }
+            /* INTERNAL EAGLE TOOLS */
+            .internal-view { padding: 30px; display: none; overflow-y: auto; height: 100%; box-sizing: border-box; }
+            .internal-view.active { display: block; }
+            .card { background: #0a0a0a; border: 1px solid #222; padding: 25px; border-radius: 12px; margin-bottom: 20px; }
+            .btn-action { background: var(--gold); color: #000; padding: 15px; border: none; border-radius: 5px; width: 100%; font-weight: bold; cursor: pointer; text-transform: uppercase; }
         </style>
     </head>
     <body>
-        <header><h1>🦅 EAGLE X COMMAND</h1></header>
+        <header><h1>🦅 EAGLE X</h1></header>
 
         <div class="nav-bar">
-            <button class="nav-item active" onclick="showEngine('nano', this)">AI LAB (NANO)</button>
-            <button class="nav-item" onclick="showEngine('brain', this)">EAGLE BRAIN (GROK)</button>
-            <button class="nav-item" onclick="showEngine('sms', this)">PHONE VAULT</button>
-            <button class="nav-item" onclick="showEngine('apps', this)">GAME VAULT</button>
+            <button class="nav-item active" onclick="switchEngine('nano', this)">AI MULTIMEDIA</button>
+            <button class="nav-item" onclick="switchEngine('brain', this)">EAGLE BRAIN</button>
+            <button class="nav-item" onclick="switchEngine('sms', this)">PHONE VAULT</button>
+            <button class="nav-item" onclick="switchEngine('apps', this)">GAME VAULT</button>
         </div>
 
-        <div class="main-view">
-            <iframe id="nano-engine" class="engine-frame active" src="https://nanobanana.online/"></iframe>
+        <div class="viewport">
+            <iframe id="nano-engine" class="slave-frame active" src="https://nanobanana.online/"></iframe>
 
-            <iframe id="brain-engine" class="engine-frame" src="https://deepai.org/chat"></iframe>
+            <iframe id="brain-engine" class="slave-frame" src="https://deepai.org/chat"></iframe>
 
-            <div id="sms-ui" class="internal-ui">
-                <div class="card" style="border-color: var(--green);">
-                    <h3 style="color:var(--green);">📡 LIVE SMS NODE: +19789724462</h3>
-                    <div style="max-height: 300px; overflow-y: auto;"><p style='color:#666;'>Node Active: Waiting for traffic...</p></div>
-                    <button class="btn" style="margin-top:15px;" onclick="location.reload()">SYNC LIVE NODE</button>
-                </div>
-                <div class="card">
-                    <h3 style="color:var(--gold);">📱 PROVISION NEW NUMBER</h3>
-                    <input type="text" placeholder="Country Code" style="width:100%; padding:10px; background:#111; color:#fff; border:1px solid #333; border-radius:5px;">
-                    <button class="btn" style="background:var(--gold); margin-top:10px;">QUERY REGISTRY</button>
+            <div id="sms-view" class="internal-view">
+                <div class="card" style="border-left: 5px solid var(--green);">
+                    <h3 style="color:var(--green); margin-top:0;">📡 ACTIVE SMS NODE: +19789724462</h3>
+                    <div style="background:#000; padding:15px; border-radius:8px; border:1px solid #111;"><p style='color:#666;'>Node Active: Waiting for traffic...</p></div>
+                    <button class="btn-action" style="background:var(--green); margin-top:20px;" onclick="location.reload()">REFRESH NODE</button>
                 </div>
             </div>
 
-            <div id="apps-ui" class="internal-ui">
+            <div id="apps-view" class="internal-view">
                 <div class="card">
-                    <h2 style="color:var(--gold);">🎮 MASTER GAME REPOSITORY</h2>
-                    <div style="background:#111; padding:15px; border-radius:10px; display:flex; justify-content:space-between; align-items:center;">
-                        <div>
-                            <b>GTA San Andreas</b><br><small style="color:#555;">v2.10 | Verified APK</small>
-                        </div>
-                        <a href="https://archive.org/download/gtasa_202105/GTA%20San%20Andreas.apk" download style="background:var(--gold); color:#000; padding:10px 20px; border-radius:5px; text-decoration:none; font-weight:bold;">FETCH</a>
+                    <h2 style="color:var(--gold); margin-top:0;">🎮 DIRECT APK ACCESS</h2>
+                    <p style="color:#555;">No external redirects. Downloaded directly from Eagle X servers.</p>
+                    <div style="background:#111; padding:20px; border-radius:10px; display:flex; justify-content:space-between; align-items:center; border:1px solid #222;">
+                        <div><b style="color:#fff;">GTA San Andreas (V2.10)</b></div>
+                        <a href="https://archive.org/download/gtasa_202105/GTA%20San%20Andreas.apk" download="GTA_SA_EagleX.apk" class="btn-action" style="width:auto; padding:10px 30px; text-decoration:none;">FETCH</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <script>
-            function showEngine(type, btn) {
-                // Deactivate all
-                document.querySelectorAll('.engine-frame, .internal-ui').forEach(el => el.classList.remove('active'));
+            function switchEngine(id, btn) {
+                document.querySelectorAll('.slave-frame, .internal-view').forEach(el => el.classList.remove('active'));
                 document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
                 
-                // Activate selected
                 btn.classList.add('active');
-                if(type === 'nano') document.getElementById('nano-engine').classList.add('active');
-                if(type === 'brain') document.getElementById('brain-engine').classList.add('active');
-                if(type === 'sms') document.getElementById('sms-ui').classList.add('active');
-                if(type === 'apps') document.getElementById('apps-ui').classList.add('active');
+                if(id === 'nano') document.getElementById('nano-engine').classList.add('active');
+                if(id === 'brain') document.getElementById('brain-engine').classList.add('active');
+                if(id === 'sms') document.getElementById('sms-view').classList.add('active');
+                if(id === 'apps') document.getElementById('apps-view').classList.add('active');
             }
         </script>
     </body>
