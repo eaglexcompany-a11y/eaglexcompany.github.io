@@ -1,83 +1,50 @@
 
     <!DOCTYPE html>
-    <html lang="en">
+    <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>EAGLE X COMMAND</title>
         <style>
-            :root { --gold: #fbbf24; --green: #00ff88; --red: #ff0055; --bg: #000; }
-            body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 15px; }
-            .card { background: #0a0a0a; border: 1px solid #222; padding: 20px; border-radius: 15px; margin-bottom: 20px; }
-            .btn { display: block; width: 100%; padding: 12px; border: none; border-radius: 8px; font-weight: 900; cursor: pointer; text-decoration: none; text-align: center; text-transform: uppercase; }
-            .btn-gold { background: var(--gold); color: #000; }
-            .btn-green { background: var(--green); color: #000; }
-            .btn-red { background: var(--red); color: #fff; }
-            .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-            input, textarea { width: 100%; padding: 12px; background: #111; color: #fff; border: 1px solid #333; border-radius: 8px; margin-bottom: 10px; box-sizing: border-box; }
-            .scroller { max-height: 250px; overflow-y: auto; padding-right: 5px; }
+            body { background:#000; color:#fff; font-family:sans-serif; padding:20px; }
+            .widget { background:#0a0a0a; border:1px solid #333; padding:20px; border-radius:15px; margin-bottom:20px; }
+            .action-btn { display:block; width:100%; padding:15px; background:#fbbf24; color:#000; font-weight:bold; text-align:center; text-decoration:none; border-radius:8px; border:none; cursor:pointer; }
+            input, textarea { width:100%; padding:10px; margin:10px 0; background:#111; color:#fff; border:1px solid #444; border-radius:5px; box-sizing:border-box; }
         </style>
     </head>
     <body>
-        <h1 style="text-align:center; color:var(--gold); letter-spacing:5px;">🦅 EAGLE X GLOBAL</h1>
-        <p style="text-align:center; color:var(--green); font-size:0.8em;">LIVE NODE STATUS: ACTIVE | 2026-05-15 05:14:59</p>
+        <h1 style="color:#fbbf24;">🦅 EAGLE X REAL-TIME</h1>
 
-        <div class="grid">
-            <div class="card" style="border: 2px solid var(--green);">
-                <h3 style="color:var(--green); margin-top:0;">📡 INBOUND SMS: +19789724462</h3>
-                <div class="scroller"><p style='color:#666;'>Monitoring line... No codes received yet.</p></div>
-                <button onclick="location.reload()" class="btn btn-green" style="margin-top:10px;">SYNC NODE</button>
-            </div>
-
-            <div class="card">
-                <h3 style="color:var(--gold); margin-top:0;">📱 PROVISION NUMBERS</h3>
-                <input type="text" id="country" placeholder="Enter Country (e.g. US, UK, KE)">
-                <button onclick="alert('Searching Global Registry...')" class="btn btn-gold">SEARCH VAULT</button>
-                <div id="results" style="margin-top:10px;"></div>
-            </div>
+        <div class="widget" style="border-color:#00ff88;">
+            <h3 style="color:#00ff88;">📡 LIVE SMS NODE: +19789724462</h3>
+            <p style='color:#666;'>Node Online: Waiting for traffic...</p>
+            <button onclick="location.reload()" class="action-btn" style="background:#00ff88; margin-top:10px;">SYNC LIVE DATA</button>
         </div>
 
-        <div class="card">
-            <h2 style="color:var(--gold); text-align:center; border-bottom:1px solid #222; padding-bottom:10px;">🎨 AI MULTIMEDIA LABORATORY</h2>
-            <div class="grid">
-                <div style="background:#111; padding:15px; border-radius:10px;">
-                    <h4 style="color:var(--green);">🎵 Text-to-Song AI</h4>
-                    <textarea placeholder="Describe lyrics, mood, and genre..."></textarea>
-                    <button onclick="alert('Sending to Suno/Replicate Engine... (20 Coins)')" class="btn btn-green">GENERATE SONG</button>
-                </div>
-                <div style="background:#111; padding:15px; border-radius:10px;">
-                    <h4 style="color:var(--green);">🎬 AI Video & Clothing</h4>
-                    <input type="file">
-                    <input type="text" placeholder="Desired Outfit/Motion...">
-                    <button onclick="alert('Processing AI Neural Layers... (50 Coins)')" class="btn btn-green">RENDER VIDEO</button>
-                </div>
+        <div class="widget">
+            <h3>🎵 AI SONG GENERATOR (REAL)</h3>
+            <p style="font-size:0.8em; color:#888;">Powered by Replicate/Suno API</p>
+            <form action="https://replicate.com/lucataco/suno-ai" target="_blank">
+                <textarea name="prompt" placeholder="Describe your song (e.g., Afrobeat about success)..." required></textarea>
+                <button type="submit" class="action-btn">EXECUTE GENERATION</button>
+            </form>
+        </div>
+
+        <div class="widget">
+            <h3>📚 GLOBAL LIBRARY (REAL)</h3>
+            <div style="background:#111; padding:15px; border-radius:10px;">
+                <p><b>Book:</b> Empire Scaling & Automation</p>
+                <p style="font-size:0.8em; color:#888;">Status: LOCKED (Requires $5.00)</p>
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&item_name=Empire_Book_Unlock&amount=5.00" class="action-btn">PAY TO UNLOCK FULL PDF</a>
             </div>
         </div>
 
-        <div class="card">
-            <h3 style="color:var(--gold); margin-top:0;">📚 GLOBAL LIBRARY</h3>
-            <div style="display:flex; gap:15px; overflow-x:auto; padding-bottom:10px;">
-                <div style="min-width:180px; background:#111; padding:15px; border-radius:10px; border:1px solid #333;">
-                    <p style="font-weight:bold;">Empire Scaling</p>
-                    <p style="font-size:0.7em; color:#666;">Introduction: Learn the keys to 100% automation.</p>
-                    <button onclick="alert('Summary: This book covers global infrastructure. Pay $5.00 to read full.')" class="btn btn-gold" style="font-size:0.7em;">PREVIEW</button>
-                </div>
-                <div style="min-width:180px; background:#111; padding:15px; border-radius:10px; border:1px solid #333;">
-                    <p style="font-weight:bold;">Python for Profit</p>
-                    <p style="font-size:0.7em; color:#666;">Introduction: Use code to build assets.</p>
-                    <button onclick="alert('Summary: Automated revenue streams. Pay $10.00 to read full.')" class="btn btn-gold" style="font-size:0.7em;">PREVIEW</button>
-                </div>
-            </div>
+        <div class="widget">
+            <h3 style="color:#ff0055;">🎮 GAME VAULT</h3>
+            <p>GTA San Andreas (Direct Cloud Link)</p>
+            <a href="https://archive.org/download/gtasa_202105/GTA%20San%20Andreas.apk" class="action-btn" style="background:#ff0055; color:#fff;">START DOWNLOAD NOW</a>
         </div>
 
-        <div class="card" style="text-align:center; border: 1px solid var(--red);">
-            <h3 style="color:var(--red); margin-top:0;">🎮 GAME VAULT</h3>
-            <p>GTA San Andreas (Official APK - Direct Download)</p>
-            <a href="https://grand-theft-auto-san-andreas.en.uptodown.com/android/download" class="btn btn-red" style="width:auto; padding:12px 50px; display:inline-block;">DOWNLOAD NOW</a>
-        </div>
-
-        <footer style="text-align:center; padding:30px; color:#444; font-size:0.8em;">
-            ADMIN: Norman Lumalia | Node ID: AC3a4866b2d2... | © 2026 Eagle X
+        <footer style="color:#444; font-size:0.8em; text-align:center;">
+            Admin: Norman Lumalia | Node: AC3a4866...
         </footer>
     </body>
     </html>
