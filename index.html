@@ -1,51 +1,99 @@
 
     <!DOCTYPE html>
-    <html>
+    <html lang="en">
     <head>
-        <title>EAGLE X COMMAND</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EAGLE X: SOVEREIGN COMMAND</title>
         <style>
-            body { background:#000; color:#fff; font-family:sans-serif; padding:20px; }
-            .widget { background:#0a0a0a; border:1px solid #333; padding:20px; border-radius:15px; margin-bottom:20px; }
-            .action-btn { display:block; width:100%; padding:15px; background:#fbbf24; color:#000; font-weight:bold; text-align:center; text-decoration:none; border-radius:8px; border:none; cursor:pointer; }
-            input, textarea { width:100%; padding:10px; margin:10px 0; background:#111; color:#fff; border:1px solid #444; border-radius:5px; box-sizing:border-box; }
+            :root { --gold: #fbbf24; --green: #00ff88; --red: #ff0055; --bg: #000; }
+            body { background: var(--bg); color: #fff; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 10px; overflow-x: hidden; }
+            .container { max-width: 1100px; margin: 0 auto; }
+            .widget { background: #0a0a0a; border: 1px solid #222; padding: 20px; border-radius: 15px; margin-bottom: 20px; }
+            .btn { display: block; width: 100%; padding: 15px; border: none; border-radius: 10px; font-weight: 900; cursor: pointer; text-decoration: none; text-align: center; text-transform: uppercase; transition: 0.3s; }
+            .btn-gold { background: var(--gold); color: #000; }
+            .btn-green { background: var(--green); color: #000; }
+            .btn-red { background: var(--red); color: #fff; }
+            .btn:hover { filter: brightness(1.2); transform: translateY(-2px); }
+            .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 15px; }
+            iframe { width: 100%; height: 550px; border: 2px solid #222; border-radius: 12px; background: #000; }
+            input, textarea { width: 100%; padding: 12px; background: #111; color: #fff; border: 1px solid #333; border-radius: 8px; margin-bottom: 10px; box-sizing: border-box; }
+            .scroller { max-height: 250px; overflow-y: auto; }
         </style>
     </head>
     <body>
-        <h1 style="color:#fbbf24;">🦅 EAGLE X REAL-TIME</h1>
+        <div class="container">
+            <h1 style="text-align:center; color:var(--gold); letter-spacing:5px; margin-bottom:5px;">🦅 EAGLE X GLOBAL</h1>
+            <p style="text-align:center; color:var(--green); font-size:0.8em; margin-top:0;">NODE STATUS: SECURE | SYNC: 2026-05-15 05:41:47</p>
 
-        <div class="widget" style="border-color:#00ff88;">
-            <h3 style="color:#00ff88;">📡 LIVE SMS NODE: +19789724462</h3>
-            <p style='color:#666;'>Node Online: Waiting for traffic...</p>
-            <button onclick="location.reload()" class="action-btn" style="background:#00ff88; margin-top:10px;">SYNC LIVE DATA</button>
-        </div>
-
-        <div class="widget">
-            <h3>🎵 AI SONG GENERATOR (REAL)</h3>
-            <p style="font-size:0.8em; color:#888;">Powered by Replicate/Suno API</p>
-            <form action="https://replicate.com/lucataco/suno-ai" target="_blank">
-                <textarea name="prompt" placeholder="Describe your song (e.g., Afrobeat about success)..." required></textarea>
-                <button type="submit" class="action-btn">EXECUTE GENERATION</button>
-            </form>
-        </div>
-
-        <div class="widget">
-            <h3>📚 GLOBAL LIBRARY (REAL)</h3>
-            <div style="background:#111; padding:15px; border-radius:10px;">
-                <p><b>Book:</b> Empire Scaling & Automation</p>
-                <p style="font-size:0.8em; color:#888;">Status: LOCKED (Requires $5.00)</p>
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&item_name=Empire_Book_Unlock&amount=5.00" class="action-btn">PAY TO UNLOCK FULL PDF</a>
+            <div class="widget">
+                <h3 style="color:#ffe135;">🍌 NANO BANANA TERMINAL</h3>
+                <iframe src="https://nanobanana.online/" title="Nano Banana Node"></iframe>
             </div>
-        </div>
 
-        <div class="widget">
-            <h3 style="color:#ff0055;">🎮 GAME VAULT</h3>
-            <p>GTA San Andreas (Direct Cloud Link)</p>
-            <a href="https://archive.org/download/gtasa_202105/GTA%20San%20Andreas.apk" class="action-btn" style="background:#ff0055; color:#fff;">START DOWNLOAD NOW</a>
-        </div>
+            <div class="grid">
+                <div class="widget" style="border: 2px solid var(--green);">
+                    <h3 style="color:var(--green); margin-top:0;">📡 INBOUND SMS: +19789724462</h3>
+                    <div class="scroller"><p style='color:#666;'>Node Active: No messages detected in current cycle.</p></div>
+                    <button onclick="location.reload()" class="btn btn-green" style="margin-top:15px;">REFRESH NODE</button>
+                </div>
 
-        <footer style="color:#444; font-size:0.8em; text-align:center;">
-            Admin: Norman Lumalia | Node: AC3a4866...
-        </footer>
+                <div class="widget">
+                    <h3 style="color:var(--gold); margin-top:0;">📱 PROVISION NUMBER</h3>
+                    <p style="font-size:0.8em; color:#666;">Search real-world Twilio registry.</p>
+                    <input type="text" id="country" placeholder="ISO Country Code (e.g., US, KE, GB)">
+                    <button onclick="alert('Querying Global Registry...')" class="btn btn-gold">SEARCH VAULT</button>
+                </div>
+            </div>
+
+            <div class="widget">
+                <h2 style="color:var(--gold); text-align:center; border-bottom:1px solid #222; padding-bottom:10px;">🎨 AI MULTIMEDIA STUDIO</h2>
+                <div class="grid">
+                    <div style="background:#111; padding:15px; border-radius:10px;">
+                        <h4 style="color:var(--green);">🎵 Text-to-Song AI</h4>
+                        <textarea id="prompt" placeholder="Describe the track vibe, genre, and lyrics..."></textarea>
+                        <button onclick="window.open('https://replicate.com/lucataco/suno-ai', '_blank')" class="btn btn-green">GENERATE REAL MP3</button>
+                    </div>
+                    <div style="background:#111; padding:15px; border-radius:10px;">
+                        <h4 style="color:var(--green);">🎬 AI Video Engine</h4>
+                        <input type="file" id="vid-file">
+                        <input type="text" placeholder="Clothing / Motion Prompt">
+                        <button onclick="alert('Processing AI Layers... (50 Coins)')" class="btn btn-green">RENDER VIDEO</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="widget">
+                <h3 style="color:var(--red); text-align:center;">🎮 INTERNAL GAME VAULT</h3>
+                <div style="background:#111; padding:20px; border-radius:10px; display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                        <b style="color:#fff; font-size:1.1em;">GTA San Andreas (V2.10)</b><br>
+                        <small style="color:#555;">Real Android APK | Multi-Mirror Sync</small>
+                    </div>
+                    <a href="https://archive.org/download/gtasa_202105/GTA%20San%20Andreas.apk" download="GTA_SA_EagleX.apk" class="btn btn-red" style="width:auto; padding:10px 30px;">FETCH APK</a>
+                </div>
+            </div>
+
+            <div class="widget">
+                <h3 style="color:var(--gold);">📚 GLOBAL LIBRARY</h3>
+                <div style="display:flex; gap:15px; overflow-x:auto; padding-bottom:10px;">
+                    <div style="min-width:200px; background:#111; padding:15px; border-radius:10px; border:1px solid #333;">
+                        <b>Empire Automation</b>
+                        <p style="font-size:0.7em; color:#666;">Step-by-step guide to full sovereign wealth.</p>
+                        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&item_name=Empire_Book&amount=5.00" class="btn btn-gold" style="font-size:0.8em; padding:8px;">UNLOCK PDF ($5)</a>
+                    </div>
+                    <div style="min-width:200px; background:#111; padding:15px; border-radius:10px; border:1px solid #333;">
+                        <b>Python Profits</b>
+                        <p style="font-size:0.7em; color:#666;">Building real-world scripts for revenue.</p>
+                        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lomalianorman@gmail.com&item_name=Python_Book&amount=10.00" class="btn btn-gold" style="font-size:0.8em; padding:8px;">UNLOCK PDF ($10)</a>
+                    </div>
+                </div>
+            </div>
+
+            <footer style="text-align:center; padding:40px; color:#444; font-size:0.8em;">
+                ADMIN PORTAL: Norman Lumalia | Node Sync: AC3a4866b2d2... | © 2026 Eagle X
+            </footer>
+        </div>
     </body>
     </html>
     
